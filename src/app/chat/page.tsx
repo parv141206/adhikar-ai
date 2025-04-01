@@ -159,7 +159,14 @@ export default function Chat() {
   };
 
   return (
-    <div className="relative mx-auto flex h-[100dvh] max-w-4xl flex-col px-4 py-0 md:h-[90vh]">
+    <motion.div
+      initial={{ opacity: 0 }}
+      transition={{
+        duration: 1.5,
+      }}
+      animate={{ opacity: 1 }}
+      className="relative mx-auto flex h-[100dvh] max-w-4xl flex-col px-4 py-0 md:h-[90vh]"
+    >
       <div className="absolute top-4 right-4 z-10">
         <select
           value={selectedLang}
@@ -236,6 +243,6 @@ export default function Chat() {
           </button>
         </div>
       </motion.form>
-    </div>
+    </motion.div>
   );
 }
